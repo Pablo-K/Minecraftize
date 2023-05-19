@@ -1,0 +1,2276 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AverageColorsImages.json" />
+    <None Remove="drop.png" />
+    <None Remove="Res\drop.png" />
+    <None Remove="Res\mc\acacia_door_bottom.png" />
+    <None Remove="Res\mc\acacia_door_top.png" />
+    <None Remove="Res\mc\acacia_leaves.png" />
+    <None Remove="Res\mc\acacia_log.png" />
+    <None Remove="Res\mc\acacia_log_top.png" />
+    <None Remove="Res\mc\acacia_planks.png" />
+    <None Remove="Res\mc\acacia_sapling.png" />
+    <None Remove="Res\mc\acacia_trapdoor.png" />
+    <None Remove="Res\mc\activator_rail.png" />
+    <None Remove="Res\mc\activator_rail_on.png" />
+    <None Remove="Res\mc\allium.png" />
+    <None Remove="Res\mc\amethyst_block.png" />
+    <None Remove="Res\mc\amethyst_cluster.png" />
+    <None Remove="Res\mc\ancient_debris_side.png" />
+    <None Remove="Res\mc\ancient_debris_top.png" />
+    <None Remove="Res\mc\andesite.png" />
+    <None Remove="Res\mc\anvil.png" />
+    <None Remove="Res\mc\anvil_top.png" />
+    <None Remove="Res\mc\azalea_leaves.png" />
+    <None Remove="Res\mc\azalea_plant.png" />
+    <None Remove="Res\mc\azalea_side.png" />
+    <None Remove="Res\mc\azalea_top.png" />
+    <None Remove="Res\mc\bamboo_block.png" />
+    <None Remove="Res\mc\bamboo_block_top.png" />
+    <None Remove="Res\mc\bamboo_door_bottom.png" />
+    <None Remove="Res\mc\bamboo_door_top.png" />
+    <None Remove="Res\mc\bamboo_fence.png" />
+    <None Remove="Res\mc\bamboo_fence_gate.png" />
+    <None Remove="Res\mc\bamboo_fence_gate_particle.png" />
+    <None Remove="Res\mc\bamboo_fence_particle.png" />
+    <None Remove="Res\mc\bamboo_large_leaves.png" />
+    <None Remove="Res\mc\bamboo_mosaic.png" />
+    <None Remove="Res\mc\bamboo_planks.png" />
+    <None Remove="Res\mc\bamboo_small_leaves.png" />
+    <None Remove="Res\mc\bamboo_stage0.png" />
+    <None Remove="Res\mc\bamboo_stalk.png" />
+    <None Remove="Res\mc\bamboo_trapdoor.png" />
+    <None Remove="Res\mc\barrel_bottom.png" />
+    <None Remove="Res\mc\barrel_side.png" />
+    <None Remove="Res\mc\barrel_top.png" />
+    <None Remove="Res\mc\barrel_top_open.png" />
+    <None Remove="Res\mc\basalt_side.png" />
+    <None Remove="Res\mc\basalt_top.png" />
+    <None Remove="Res\mc\beacon.png" />
+    <None Remove="Res\mc\bedrock.png" />
+    <None Remove="Res\mc\beehive_end.png" />
+    <None Remove="Res\mc\beehive_front.png" />
+    <None Remove="Res\mc\beehive_front_honey.png" />
+    <None Remove="Res\mc\beehive_side.png" />
+    <None Remove="Res\mc\beetroots_stage3.png" />
+    <None Remove="Res\mc\bee_nest_bottom.png" />
+    <None Remove="Res\mc\bee_nest_front.png" />
+    <None Remove="Res\mc\bee_nest_front_honey.png" />
+    <None Remove="Res\mc\bee_nest_side.png" />
+    <None Remove="Res\mc\bee_nest_top.png" />
+    <None Remove="Res\mc\big_dripleaf_stem.png" />
+    <None Remove="Res\mc\big_dripleaf_top.png" />
+    <None Remove="Res\mc\birch_door_bottom.png" />
+    <None Remove="Res\mc\birch_door_top.png" />
+    <None Remove="Res\mc\birch_leaves.png" />
+    <None Remove="Res\mc\birch_log.png" />
+    <None Remove="Res\mc\birch_log_top.png" />
+    <None Remove="Res\mc\birch_planks.png" />
+    <None Remove="Res\mc\birch_sapling.png" />
+    <None Remove="Res\mc\birch_trapdoor.png" />
+    <None Remove="Res\mc\blackstone.png" />
+    <None Remove="Res\mc\blackstone_top.png" />
+    <None Remove="Res\mc\black_concrete.png" />
+    <None Remove="Res\mc\black_concrete_powder.png" />
+    <None Remove="Res\mc\black_glazed_terracotta.png" />
+    <None Remove="Res\mc\black_shulker_box.png" />
+    <None Remove="Res\mc\black_stained_glass.png" />
+    <None Remove="Res\mc\black_terracotta.png" />
+    <None Remove="Res\mc\black_wool.png" />
+    <None Remove="Res\mc\blast_furnace_front.png" />
+    <None Remove="Res\mc\blast_furnace_front_on.png" />
+    <None Remove="Res\mc\blast_furnace_side.png" />
+    <None Remove="Res\mc\blast_furnace_top.png" />
+    <None Remove="Res\mc\blue_concrete.png" />
+    <None Remove="Res\mc\blue_concrete_powder.png" />
+    <None Remove="Res\mc\blue_glazed_terracotta.png" />
+    <None Remove="Res\mc\blue_ice.png" />
+    <None Remove="Res\mc\blue_shulker_box.png" />
+    <None Remove="Res\mc\blue_stained_glass.png" />
+    <None Remove="Res\mc\blue_terracotta.png" />
+    <None Remove="Res\mc\blue_wool.png" />
+    <None Remove="Res\mc\bone_block_side.png" />
+    <None Remove="Res\mc\bone_block_top.png" />
+    <None Remove="Res\mc\bookshelf.png" />
+    <None Remove="Res\mc\brain_coral.png" />
+    <None Remove="Res\mc\brain_coral_block.png" />
+    <None Remove="Res\mc\brain_coral_fan.png" />
+    <None Remove="Res\mc\brewing_stand.png" />
+    <None Remove="Res\mc\brewing_stand_base.png" />
+    <None Remove="Res\mc\bricks.png" />
+    <None Remove="Res\mc\brown_concrete.png" />
+    <None Remove="Res\mc\brown_concrete_powder.png" />
+    <None Remove="Res\mc\brown_glazed_terracotta.png" />
+    <None Remove="Res\mc\brown_mushroom_block.png" />
+    <None Remove="Res\mc\brown_shulker_box.png" />
+    <None Remove="Res\mc\brown_stained_glass.png" />
+    <None Remove="Res\mc\brown_terracotta.png" />
+    <None Remove="Res\mc\brown_wool.png" />
+    <None Remove="Res\mc\bubble_coral.png" />
+    <None Remove="Res\mc\bubble_coral_block.png" />
+    <None Remove="Res\mc\bubble_coral_fan.png" />
+    <None Remove="Res\mc\budding_amethyst.png" />
+    <None Remove="Res\mc\cactus_bottom.png" />
+    <None Remove="Res\mc\cactus_side.png" />
+    <None Remove="Res\mc\cactus_top.png" />
+    <None Remove="Res\mc\cake_bottom.png" />
+    <None Remove="Res\mc\cake_inner.png" />
+    <None Remove="Res\mc\cake_side.png" />
+    <None Remove="Res\mc\cake_top.png" />
+    <None Remove="Res\mc\calcite.png" />
+    <None Remove="Res\mc\campfire_log.png" />
+    <None Remove="Res\mc\carrots_stage3.png" />
+    <None Remove="Res\mc\cartography_table_side1.png" />
+    <None Remove="Res\mc\cartography_table_side2.png" />
+    <None Remove="Res\mc\cartography_table_side3.png" />
+    <None Remove="Res\mc\cartography_table_top.png" />
+    <None Remove="Res\mc\carved_pumpkin.png" />
+    <None Remove="Res\mc\cauldron_inner.png" />
+    <None Remove="Res\mc\cauldron_side.png" />
+    <None Remove="Res\mc\cauldron_top.png" />
+    <None Remove="Res\mc\cave_vines.png" />
+    <None Remove="Res\mc\cave_vines_lit.png" />
+    <None Remove="Res\mc\cave_vines_plant.png" />
+    <None Remove="Res\mc\cave_vines_plant_lit.png" />
+    <None Remove="Res\mc\cherry_door_bottom.png" />
+    <None Remove="Res\mc\cherry_door_top.png" />
+    <None Remove="Res\mc\cherry_leaves.png" />
+    <None Remove="Res\mc\cherry_log.png" />
+    <None Remove="Res\mc\cherry_log_top.png" />
+    <None Remove="Res\mc\cherry_planks.png" />
+    <None Remove="Res\mc\cherry_sapling.png" />
+    <None Remove="Res\mc\cherry_trapdoor.png" />
+    <None Remove="Res\mc\chipped_anvil_top.png" />
+    <None Remove="Res\mc\chiseled_bookshelf_empty.png" />
+    <None Remove="Res\mc\chiseled_bookshelf_occupied.png" />
+    <None Remove="Res\mc\chiseled_bookshelf_side.png" />
+    <None Remove="Res\mc\chiseled_bookshelf_top.png" />
+    <None Remove="Res\mc\chiseled_deepslate.png" />
+    <None Remove="Res\mc\chiseled_nether_bricks.png" />
+    <None Remove="Res\mc\chiseled_polished_blackstone.png" />
+    <None Remove="Res\mc\chiseled_quartz_block.png" />
+    <None Remove="Res\mc\chiseled_quartz_block_top.png" />
+    <None Remove="Res\mc\chiseled_red_sandstone.png" />
+    <None Remove="Res\mc\chiseled_sandstone.png" />
+    <None Remove="Res\mc\chiseled_stone_bricks.png" />
+    <None Remove="Res\mc\chorus_flower.png" />
+    <None Remove="Res\mc\chorus_flower_dead.png" />
+    <None Remove="Res\mc\chorus_plant.png" />
+    <None Remove="Res\mc\clay.png" />
+    <None Remove="Res\mc\coal_block.png" />
+    <None Remove="Res\mc\coal_ore.png" />
+    <None Remove="Res\mc\coarse_dirt.png" />
+    <None Remove="Res\mc\cobbled_deepslate.png" />
+    <None Remove="Res\mc\cobblestone.png" />
+    <None Remove="Res\mc\cobweb.png" />
+    <None Remove="Res\mc\comparator.png" />
+    <None Remove="Res\mc\comparator_on.png" />
+    <None Remove="Res\mc\composter_bottom.png" />
+    <None Remove="Res\mc\composter_compost.png" />
+    <None Remove="Res\mc\composter_ready.png" />
+    <None Remove="Res\mc\composter_side.png" />
+    <None Remove="Res\mc\conduit.png" />
+    <None Remove="Res\mc\copper_block.png" />
+    <None Remove="Res\mc\copper_ore.png" />
+    <None Remove="Res\mc\cracked_deepslate_bricks.png" />
+    <None Remove="Res\mc\cracked_deepslate_tiles.png" />
+    <None Remove="Res\mc\cracked_nether_bricks.png" />
+    <None Remove="Res\mc\cracked_polished_blackstone_bricks.png" />
+    <None Remove="Res\mc\cracked_stone_bricks.png" />
+    <None Remove="Res\mc\crafting_table_front.png" />
+    <None Remove="Res\mc\crafting_table_side.png" />
+    <None Remove="Res\mc\crafting_table_top.png" />
+    <None Remove="Res\mc\crimson_door_bottom.png" />
+    <None Remove="Res\mc\crimson_door_top.png" />
+    <None Remove="Res\mc\crimson_nylium.png" />
+    <None Remove="Res\mc\crimson_nylium_side.png" />
+    <None Remove="Res\mc\crimson_planks.png" />
+    <None Remove="Res\mc\crimson_stem_top.png" />
+    <None Remove="Res\mc\crimson_trapdoor.png" />
+    <None Remove="Res\mc\crying_obsidian.png" />
+    <None Remove="Res\mc\cut_copper.png" />
+    <None Remove="Res\mc\cut_red_sandstone.png" />
+    <None Remove="Res\mc\cut_sandstone.png" />
+    <None Remove="Res\mc\cyan_concrete.png" />
+    <None Remove="Res\mc\cyan_concrete_powder.png" />
+    <None Remove="Res\mc\cyan_glazed_terracotta.png" />
+    <None Remove="Res\mc\cyan_shulker_box.png" />
+    <None Remove="Res\mc\cyan_stained_glass.png" />
+    <None Remove="Res\mc\cyan_stained_glass_pane_top.png" />
+    <None Remove="Res\mc\cyan_terracotta.png" />
+    <None Remove="Res\mc\cyan_wool.png" />
+    <None Remove="Res\mc\damaged_anvil_top.png" />
+    <None Remove="Res\mc\dark_oak_door_bottom.png" />
+    <None Remove="Res\mc\dark_oak_door_top.png" />
+    <None Remove="Res\mc\dark_oak_leaves.png" />
+    <None Remove="Res\mc\dark_oak_log.png" />
+    <None Remove="Res\mc\dark_oak_log_top.png" />
+    <None Remove="Res\mc\dark_oak_planks.png" />
+    <None Remove="Res\mc\dark_oak_sapling.png" />
+    <None Remove="Res\mc\dark_oak_trapdoor.png" />
+    <None Remove="Res\mc\dark_prismarine.png" />
+    <None Remove="Res\mc\daylight_detector_inverted_top.png" />
+    <None Remove="Res\mc\daylight_detector_side.png" />
+    <None Remove="Res\mc\daylight_detector_top.png" />
+    <None Remove="Res\mc\dead_brain_coral.png" />
+    <None Remove="Res\mc\dead_brain_coral_block.png" />
+    <None Remove="Res\mc\dead_brain_coral_fan.png" />
+    <None Remove="Res\mc\dead_bubble_coral.png" />
+    <None Remove="Res\mc\dead_bubble_coral_block.png" />
+    <None Remove="Res\mc\dead_bubble_coral_fan.png" />
+    <None Remove="Res\mc\dead_bush.png" />
+    <None Remove="Res\mc\dead_fire_coral.png" />
+    <None Remove="Res\mc\dead_fire_coral_block.png" />
+    <None Remove="Res\mc\dead_fire_coral_fan.png" />
+    <None Remove="Res\mc\dead_horn_coral.png" />
+    <None Remove="Res\mc\dead_horn_coral_block.png" />
+    <None Remove="Res\mc\dead_tube_coral_block.png" />
+    <None Remove="Res\mc\dead_tube_coral_fan.png" />
+    <None Remove="Res\mc\deepslate.png" />
+    <None Remove="Res\mc\deepslate_bricks.png" />
+    <None Remove="Res\mc\deepslate_coal_ore.png" />
+    <None Remove="Res\mc\deepslate_copper_ore.png" />
+    <None Remove="Res\mc\deepslate_diamond_ore.png" />
+    <None Remove="Res\mc\deepslate_emerald_ore.png" />
+    <None Remove="Res\mc\deepslate_gold_ore.png" />
+    <None Remove="Res\mc\deepslate_iron_ore.png" />
+    <None Remove="Res\mc\deepslate_lapis_ore.png" />
+    <None Remove="Res\mc\deepslate_redstone_ore.png" />
+    <None Remove="Res\mc\deepslate_tiles.png" />
+    <None Remove="Res\mc\deepslate_top.png" />
+    <None Remove="Res\mc\destroy_stage_9.png" />
+    <None Remove="Res\mc\detector_rail.png" />
+    <None Remove="Res\mc\detector_rail_on.png" />
+    <None Remove="Res\mc\diamond_block.png" />
+    <None Remove="Res\mc\diamond_ore.png" />
+    <None Remove="Res\mc\diorite.png" />
+    <None Remove="Res\mc\dirt.png" />
+    <None Remove="Res\mc\dirt_path_side.png" />
+    <None Remove="Res\mc\dirt_path_top.png" />
+    <None Remove="Res\mc\dispenser_front.png" />
+    <None Remove="Res\mc\dispenser_front_vertical.png" />
+    <None Remove="Res\mc\dragon_egg.png" />
+    <None Remove="Res\mc\dried_kelp_bottom.png" />
+    <None Remove="Res\mc\dried_kelp_side.png" />
+    <None Remove="Res\mc\dried_kelp_top.png" />
+    <None Remove="Res\mc\dripstone_block.png" />
+    <None Remove="Res\mc\dropper_front.png" />
+    <None Remove="Res\mc\dropper_front_vertical.png" />
+    <None Remove="Res\mc\emerald_block.png" />
+    <None Remove="Res\mc\emerald_ore.png" />
+    <None Remove="Res\mc\enchanting_table_bottom.png" />
+    <None Remove="Res\mc\enchanting_table_side.png" />
+    <None Remove="Res\mc\enchanting_table_top.png" />
+    <None Remove="Res\mc\end_portal_frame_eye.png" />
+    <None Remove="Res\mc\end_portal_frame_side.png" />
+    <None Remove="Res\mc\end_portal_frame_top.png" />
+    <None Remove="Res\mc\end_stone.png" />
+    <None Remove="Res\mc\end_stone_bricks.png" />
+    <None Remove="Res\mc\exposed_copper.png" />
+    <None Remove="Res\mc\exposed_cut_copper.png" />
+    <None Remove="Res\mc\farmland.png" />
+    <None Remove="Res\mc\farmland_moist.png" />
+    <None Remove="Res\mc\fire_coral.png" />
+    <None Remove="Res\mc\fire_coral_block.png" />
+    <None Remove="Res\mc\fire_coral_fan.png" />
+    <None Remove="Res\mc\fletching_table_front.png" />
+    <None Remove="Res\mc\fletching_table_side.png" />
+    <None Remove="Res\mc\fletching_table_top.png" />
+    <None Remove="Res\mc\flowering_azalea_leaves.png" />
+    <None Remove="Res\mc\flowering_azalea_side.png" />
+    <None Remove="Res\mc\flowering_azalea_top.png" />
+    <None Remove="Res\mc\frogspawn.png" />
+    <None Remove="Res\mc\frosted_ice_0.png" />
+    <None Remove="Res\mc\frosted_ice_1.png" />
+    <None Remove="Res\mc\frosted_ice_2.png" />
+    <None Remove="Res\mc\frosted_ice_3.png" />
+    <None Remove="Res\mc\furnace_front.png" />
+    <None Remove="Res\mc\furnace_front_on.png" />
+    <None Remove="Res\mc\furnace_side.png" />
+    <None Remove="Res\mc\furnace_top.png" />
+    <None Remove="Res\mc\gilded_blackstone.png" />
+    <None Remove="Res\mc\glass.png" />
+    <None Remove="Res\mc\glowstone.png" />
+    <None Remove="Res\mc\glow_item_frame.png" />
+    <None Remove="Res\mc\glow_lichen.png" />
+    <None Remove="Res\mc\gold_block.png" />
+    <None Remove="Res\mc\gold_ore.png" />
+    <None Remove="Res\mc\granite.png" />
+    <None Remove="Res\mc\grass.png" />
+    <None Remove="Res\mc\grass_block_side.png" />
+    <None Remove="Res\mc\grass_block_side_overlay.png" />
+    <None Remove="Res\mc\grass_block_snow.png" />
+    <None Remove="Res\mc\grass_block_top.png" />
+    <None Remove="Res\mc\gravel.png" />
+    <None Remove="Res\mc\gray_candle.png" />
+    <None Remove="Res\mc\gray_concrete.png" />
+    <None Remove="Res\mc\gray_concrete_powder.png" />
+    <None Remove="Res\mc\gray_glazed_terracotta.png" />
+    <None Remove="Res\mc\gray_shulker_box.png" />
+    <None Remove="Res\mc\gray_stained_glass.png" />
+    <None Remove="Res\mc\gray_terracotta.png" />
+    <None Remove="Res\mc\gray_wool.png" />
+    <None Remove="Res\mc\green_concrete.png" />
+    <None Remove="Res\mc\green_concrete_powder.png" />
+    <None Remove="Res\mc\green_glazed_terracotta.png" />
+    <None Remove="Res\mc\green_shulker_box.png" />
+    <None Remove="Res\mc\green_stained_glass.png" />
+    <None Remove="Res\mc\green_terracotta.png" />
+    <None Remove="Res\mc\green_wool.png" />
+    <None Remove="Res\mc\grindstone_pivot.png" />
+    <None Remove="Res\mc\grindstone_round.png" />
+    <None Remove="Res\mc\hay_block_side.png" />
+    <None Remove="Res\mc\hay_block_top.png" />
+    <None Remove="Res\mc\honeycomb_block.png" />
+    <None Remove="Res\mc\honey_block_bottom.png" />
+    <None Remove="Res\mc\honey_block_side.png" />
+    <None Remove="Res\mc\honey_block_top.png" />
+    <None Remove="Res\mc\hopper_inside.png" />
+    <None Remove="Res\mc\hopper_outside.png" />
+    <None Remove="Res\mc\hopper_top.png" />
+    <None Remove="Res\mc\horn_coral.png" />
+    <None Remove="Res\mc\horn_coral_block.png" />
+    <None Remove="Res\mc\horn_coral_fan.png" />
+    <None Remove="Res\mc\ice.png" />
+    <None Remove="Res\mc\iron_block.png" />
+    <None Remove="Res\mc\iron_door_bottom.png" />
+    <None Remove="Res\mc\iron_door_top.png" />
+    <None Remove="Res\mc\iron_ore.png" />
+    <None Remove="Res\mc\iron_trapdoor.png" />
+    <None Remove="Res\mc\item_frame.png" />
+    <None Remove="Res\mc\jack_o_lantern.png" />
+    <None Remove="Res\mc\jigsaw_bottom.png" />
+    <None Remove="Res\mc\jigsaw_lock.png" />
+    <None Remove="Res\mc\jigsaw_side.png" />
+    <None Remove="Res\mc\jigsaw_top.png" />
+    <None Remove="Res\mc\jukebox_side.png" />
+    <None Remove="Res\mc\jukebox_top.png" />
+    <None Remove="Res\mc\jungle_door_bottom.png" />
+    <None Remove="Res\mc\jungle_door_top.png" />
+    <None Remove="Res\mc\jungle_leaves.png" />
+    <None Remove="Res\mc\jungle_log.png" />
+    <None Remove="Res\mc\jungle_log_top.png" />
+    <None Remove="Res\mc\jungle_planks.png" />
+    <None Remove="Res\mc\jungle_trapdoor.png" />
+    <None Remove="Res\mc\ladder.png" />
+    <None Remove="Res\mc\lapis_block.png" />
+    <None Remove="Res\mc\lapis_ore.png" />
+    <None Remove="Res\mc\large_amethyst_bud.png" />
+    <None Remove="Res\mc\lectern_base.png" />
+    <None Remove="Res\mc\lectern_front.png" />
+    <None Remove="Res\mc\lectern_sides.png" />
+    <None Remove="Res\mc\lectern_top.png" />
+    <None Remove="Res\mc\light_blue_concrete.png" />
+    <None Remove="Res\mc\light_blue_concrete_powder.png" />
+    <None Remove="Res\mc\light_blue_glazed_terracotta.png" />
+    <None Remove="Res\mc\light_blue_shulker_box.png" />
+    <None Remove="Res\mc\light_blue_stained_glass.png" />
+    <None Remove="Res\mc\light_blue_stained_glass_pane_top.png" />
+    <None Remove="Res\mc\light_blue_terracotta.png" />
+    <None Remove="Res\mc\light_blue_wool.png" />
+    <None Remove="Res\mc\light_gray_concrete.png" />
+    <None Remove="Res\mc\light_gray_concrete_powder.png" />
+    <None Remove="Res\mc\light_gray_glazed_terracotta.png" />
+    <None Remove="Res\mc\light_gray_shulker_box.png" />
+    <None Remove="Res\mc\light_gray_stained_glass.png" />
+    <None Remove="Res\mc\light_gray_terracotta.png" />
+    <None Remove="Res\mc\light_gray_wool.png" />
+    <None Remove="Res\mc\lime_concrete.png" />
+    <None Remove="Res\mc\lime_concrete_powder.png" />
+    <None Remove="Res\mc\lime_glazed_terracotta.png" />
+    <None Remove="Res\mc\lime_shulker_box.png" />
+    <None Remove="Res\mc\lime_stained_glass.png" />
+    <None Remove="Res\mc\lime_terracotta.png" />
+    <None Remove="Res\mc\lime_wool.png" />
+    <None Remove="Res\mc\lodestone_side.png" />
+    <None Remove="Res\mc\lodestone_top.png" />
+    <None Remove="Res\mc\loom_bottom.png" />
+    <None Remove="Res\mc\loom_front.png" />
+    <None Remove="Res\mc\loom_side.png" />
+    <None Remove="Res\mc\loom_top.png" />
+    <None Remove="Res\mc\magenta_concrete.png" />
+    <None Remove="Res\mc\magenta_concrete_powder.png" />
+    <None Remove="Res\mc\magenta_glazed_terracotta.png" />
+    <None Remove="Res\mc\magenta_shulker_box.png" />
+    <None Remove="Res\mc\magenta_stained_glass.png" />
+    <None Remove="Res\mc\magenta_terracotta.png" />
+    <None Remove="Res\mc\magenta_wool.png" />
+    <None Remove="Res\mc\mangrove_door_bottom.png" />
+    <None Remove="Res\mc\mangrove_door_top.png" />
+    <None Remove="Res\mc\mangrove_leaves.png" />
+    <None Remove="Res\mc\mangrove_log.png" />
+    <None Remove="Res\mc\mangrove_log_top.png" />
+    <None Remove="Res\mc\mangrove_planks.png" />
+    <None Remove="Res\mc\mangrove_propagule.png" />
+    <None Remove="Res\mc\mangrove_propagule_hanging.png" />
+    <None Remove="Res\mc\mangrove_roots_side.png" />
+    <None Remove="Res\mc\mangrove_roots_top.png" />
+    <None Remove="Res\mc\mangrove_trapdoor.png" />
+    <None Remove="Res\mc\medium_amethyst_bud.png" />
+    <None Remove="Res\mc\melon_side.png" />
+    <None Remove="Res\mc\melon_top.png" />
+    <None Remove="Res\mc\mossy_cobblestone.png" />
+    <None Remove="Res\mc\mossy_stone_bricks.png" />
+    <None Remove="Res\mc\moss_block.png" />
+    <None Remove="Res\mc\mud.png" />
+    <None Remove="Res\mc\muddy_mangrove_roots_side.png" />
+    <None Remove="Res\mc\muddy_mangrove_roots_top.png" />
+    <None Remove="Res\mc\mud_bricks.png" />
+    <None Remove="Res\mc\mushroom_block_inside.png" />
+    <None Remove="Res\mc\mushroom_stem.png" />
+    <None Remove="Res\mc\mycelium_side.png" />
+    <None Remove="Res\mc\mycelium_top.png" />
+    <None Remove="Res\mc\netherite_block.png" />
+    <None Remove="Res\mc\netherrack.png" />
+    <None Remove="Res\mc\nether_bricks.png" />
+    <None Remove="Res\mc\nether_gold_ore.png" />
+    <None Remove="Res\mc\nether_quartz_ore.png" />
+    <None Remove="Res\mc\nether_sprouts.png" />
+    <None Remove="Res\mc\nether_wart_block.png" />
+    <None Remove="Res\mc\nether_wart_stage0.png" />
+    <None Remove="Res\mc\nether_wart_stage1.png" />
+    <None Remove="Res\mc\nether_wart_stage2.png" />
+    <None Remove="Res\mc\note_block.png" />
+    <None Remove="Res\mc\oak_door_bottom.png" />
+    <None Remove="Res\mc\oak_door_top.png" />
+    <None Remove="Res\mc\oak_leaves.png" />
+    <None Remove="Res\mc\oak_log.png" />
+    <None Remove="Res\mc\oak_log_top.png" />
+    <None Remove="Res\mc\oak_planks.png" />
+    <None Remove="Res\mc\oak_sapling.png" />
+    <None Remove="Res\mc\oak_trapdoor.png" />
+    <None Remove="Res\mc\observer_back.png" />
+    <None Remove="Res\mc\observer_back_on.png" />
+    <None Remove="Res\mc\observer_front.png" />
+    <None Remove="Res\mc\observer_side.png" />
+    <None Remove="Res\mc\observer_top.png" />
+    <None Remove="Res\mc\obsidian.png" />
+    <None Remove="Res\mc\ochre_froglight_side.png" />
+    <None Remove="Res\mc\ochre_froglight_top.png" />
+    <None Remove="Res\mc\orange_concrete.png" />
+    <None Remove="Res\mc\orange_concrete_powder.png" />
+    <None Remove="Res\mc\orange_glazed_terracotta.png" />
+    <None Remove="Res\mc\orange_shulker_box.png" />
+    <None Remove="Res\mc\orange_stained_glass.png" />
+    <None Remove="Res\mc\orange_stained_glass_pane_top.png" />
+    <None Remove="Res\mc\orange_terracotta.png" />
+    <None Remove="Res\mc\orange_wool.png" />
+    <None Remove="Res\mc\oxidized_copper.png" />
+    <None Remove="Res\mc\oxidized_cut_copper.png" />
+    <None Remove="Res\mc\packed_ice.png" />
+    <None Remove="Res\mc\packed_mud.png" />
+    <None Remove="Res\mc\pearlescent_froglight_side.png" />
+    <None Remove="Res\mc\pearlescent_froglight_top.png" />
+    <None Remove="Res\mc\peony_bottom.png" />
+    <None Remove="Res\mc\peony_top.png" />
+    <None Remove="Res\mc\pink_concrete.png" />
+    <None Remove="Res\mc\pink_concrete_powder.png" />
+    <None Remove="Res\mc\pink_glazed_terracotta.png" />
+    <None Remove="Res\mc\pink_petals.png" />
+    <None Remove="Res\mc\pink_shulker_box.png" />
+    <None Remove="Res\mc\pink_stained_glass.png" />
+    <None Remove="Res\mc\pink_terracotta.png" />
+    <None Remove="Res\mc\pink_tulip.png" />
+    <None Remove="Res\mc\pink_wool.png" />
+    <None Remove="Res\mc\piston_bottom.png" />
+    <None Remove="Res\mc\piston_inner.png" />
+    <None Remove="Res\mc\piston_side.png" />
+    <None Remove="Res\mc\piston_top.png" />
+    <None Remove="Res\mc\piston_top_sticky.png" />
+    <None Remove="Res\mc\podzol_side.png" />
+    <None Remove="Res\mc\podzol_top.png" />
+    <None Remove="Res\mc\pointed_dripstone_down_base.png" />
+    <None Remove="Res\mc\pointed_dripstone_down_frustum.png" />
+    <None Remove="Res\mc\pointed_dripstone_down_middle.png" />
+    <None Remove="Res\mc\pointed_dripstone_up_base.png" />
+    <None Remove="Res\mc\pointed_dripstone_up_frustum.png" />
+    <None Remove="Res\mc\pointed_dripstone_up_middle.png" />
+    <None Remove="Res\mc\polished_andesite.png" />
+    <None Remove="Res\mc\polished_basalt_side.png" />
+    <None Remove="Res\mc\polished_basalt_top.png" />
+    <None Remove="Res\mc\polished_blackstone.png" />
+    <None Remove="Res\mc\polished_blackstone_bricks.png" />
+    <None Remove="Res\mc\polished_deepslate.png" />
+    <None Remove="Res\mc\polished_diorite.png" />
+    <None Remove="Res\mc\polished_granite.png" />
+    <None Remove="Res\mc\poppy.png" />
+    <None Remove="Res\mc\potatoes_stage0.png" />
+    <None Remove="Res\mc\potatoes_stage1.png" />
+    <None Remove="Res\mc\potatoes_stage2.png" />
+    <None Remove="Res\mc\potatoes_stage3.png" />
+    <None Remove="Res\mc\potted_azalea_bush_plant.png" />
+    <None Remove="Res\mc\potted_azalea_bush_side.png" />
+    <None Remove="Res\mc\potted_azalea_bush_top.png" />
+    <None Remove="Res\mc\potted_flowering_azalea_bush_plant.png" />
+    <None Remove="Res\mc\potted_flowering_azalea_bush_side.png" />
+    <None Remove="Res\mc\potted_flowering_azalea_bush_top.png" />
+    <None Remove="Res\mc\powder_snow.png" />
+    <None Remove="Res\mc\powered_rail.png" />
+    <None Remove="Res\mc\powered_rail_on.png" />
+    <None Remove="Res\mc\prismarine_bricks.png" />
+    <None Remove="Res\mc\pumpkin_side.png" />
+    <None Remove="Res\mc\pumpkin_stem.png" />
+    <None Remove="Res\mc\pumpkin_top.png" />
+    <None Remove="Res\mc\purple_candle.png" />
+    <None Remove="Res\mc\purple_candle_lit.png" />
+    <None Remove="Res\mc\purple_concrete.png" />
+    <None Remove="Res\mc\purple_concrete_powder.png" />
+    <None Remove="Res\mc\purple_glazed_terracotta.png" />
+    <None Remove="Res\mc\purple_shulker_box.png" />
+    <None Remove="Res\mc\purple_stained_glass.png" />
+    <None Remove="Res\mc\purple_stained_glass_pane_top.png" />
+    <None Remove="Res\mc\purple_terracotta.png" />
+    <None Remove="Res\mc\purple_wool.png" />
+    <None Remove="Res\mc\purpur_block.png" />
+    <None Remove="Res\mc\purpur_pillar.png" />
+    <None Remove="Res\mc\purpur_pillar_top.png" />
+    <None Remove="Res\mc\quartz_block_bottom.png" />
+    <None Remove="Res\mc\quartz_block_side.png" />
+    <None Remove="Res\mc\quartz_block_top.png" />
+    <None Remove="Res\mc\quartz_bricks.png" />
+    <None Remove="Res\mc\quartz_pillar.png" />
+    <None Remove="Res\mc\quartz_pillar_top.png" />
+    <None Remove="Res\mc\rail.png" />
+    <None Remove="Res\mc\rail_corner.png" />
+    <None Remove="Res\mc\raw_copper_block.png" />
+    <None Remove="Res\mc\raw_gold_block.png" />
+    <None Remove="Res\mc\raw_iron_block.png" />
+    <None Remove="Res\mc\redstone_block.png" />
+    <None Remove="Res\mc\redstone_dust_dot.png" />
+    <None Remove="Res\mc\redstone_dust_line0.png" />
+    <None Remove="Res\mc\redstone_dust_line1.png" />
+    <None Remove="Res\mc\redstone_dust_overlay.png" />
+    <None Remove="Res\mc\redstone_lamp.png" />
+    <None Remove="Res\mc\redstone_lamp_on.png" />
+    <None Remove="Res\mc\redstone_ore.png" />
+    <None Remove="Res\mc\redstone_torch.png" />
+    <None Remove="Res\mc\red_concrete.png" />
+    <None Remove="Res\mc\red_concrete_powder.png" />
+    <None Remove="Res\mc\red_glazed_terracotta.png" />
+    <None Remove="Res\mc\red_mushroom_block.png" />
+    <None Remove="Res\mc\red_nether_bricks.png" />
+    <None Remove="Res\mc\red_sand.png" />
+    <None Remove="Res\mc\red_sandstone.png" />
+    <None Remove="Res\mc\red_sandstone_bottom.png" />
+    <None Remove="Res\mc\red_sandstone_top.png" />
+    <None Remove="Res\mc\red_shulker_box.png" />
+    <None Remove="Res\mc\red_stained_glass.png" />
+    <None Remove="Res\mc\red_terracotta.png" />
+    <None Remove="Res\mc\red_wool.png" />
+    <None Remove="Res\mc\reinforced_deepslate_bottom.png" />
+    <None Remove="Res\mc\reinforced_deepslate_side.png" />
+    <None Remove="Res\mc\reinforced_deepslate_top.png" />
+    <None Remove="Res\mc\repeater.png" />
+    <None Remove="Res\mc\repeater_on.png" />
+    <None Remove="Res\mc\respawn_anchor_bottom.png" />
+    <None Remove="Res\mc\respawn_anchor_side0.png" />
+    <None Remove="Res\mc\respawn_anchor_side1.png" />
+    <None Remove="Res\mc\respawn_anchor_side2.png" />
+    <None Remove="Res\mc\respawn_anchor_side3.png" />
+    <None Remove="Res\mc\respawn_anchor_side4.png" />
+    <None Remove="Res\mc\respawn_anchor_top_off.png" />
+    <None Remove="Res\mc\rooted_dirt.png" />
+    <None Remove="Res\mc\rose_bush_bottom.png" />
+    <None Remove="Res\mc\rose_bush_top.png" />
+    <None Remove="Res\mc\sand.png" />
+    <None Remove="Res\mc\sandstone.png" />
+    <None Remove="Res\mc\sandstone_bottom.png" />
+    <None Remove="Res\mc\sandstone_top.png" />
+    <None Remove="Res\mc\scaffolding_bottom.png" />
+    <None Remove="Res\mc\scaffolding_side.png" />
+    <None Remove="Res\mc\scaffolding_top.png" />
+    <None Remove="Res\mc\sculk_catalyst_bottom.png" />
+    <None Remove="Res\mc\sculk_catalyst_side.png" />
+    <None Remove="Res\mc\sculk_catalyst_top.png" />
+    <None Remove="Res\mc\sculk_sensor_bottom.png" />
+    <None Remove="Res\mc\sculk_sensor_side.png" />
+    <None Remove="Res\mc\sculk_sensor_top.png" />
+    <None Remove="Res\mc\sculk_shrieker_bottom.png" />
+    <None Remove="Res\mc\sculk_shrieker_side.png" />
+    <None Remove="Res\mc\sculk_shrieker_top.png" />
+    <None Remove="Res\mc\sea_pickle.png" />
+    <None Remove="Res\mc\shroomlight.png" />
+    <None Remove="Res\mc\shulker_box.png" />
+    <None Remove="Res\mc\slime_block.png" />
+    <None Remove="Res\mc\small_amethyst_bud.png" />
+    <None Remove="Res\mc\small_dripleaf_side.png" />
+    <None Remove="Res\mc\small_dripleaf_stem_bottom.png" />
+    <None Remove="Res\mc\small_dripleaf_stem_top.png" />
+    <None Remove="Res\mc\smithing_table_bottom.png" />
+    <None Remove="Res\mc\smithing_table_front.png" />
+    <None Remove="Res\mc\smithing_table_side.png" />
+    <None Remove="Res\mc\smithing_table_top.png" />
+    <None Remove="Res\mc\smoker_bottom.png" />
+    <None Remove="Res\mc\smoker_front.png" />
+    <None Remove="Res\mc\smoker_side.png" />
+    <None Remove="Res\mc\smoker_top.png" />
+    <None Remove="Res\mc\smooth_basalt.png" />
+    <None Remove="Res\mc\smooth_stone.png" />
+    <None Remove="Res\mc\smooth_stone_slab_side.png" />
+    <None Remove="Res\mc\snow.png" />
+    <None Remove="Res\mc\soul_sand.png" />
+    <None Remove="Res\mc\soul_soil.png" />
+    <None Remove="Res\mc\soul_torch.png" />
+    <None Remove="Res\mc\spawner.png" />
+    <None Remove="Res\mc\sponge.png" />
+    <None Remove="Res\mc\spore_blossom.png" />
+    <None Remove="Res\mc\spore_blossom_base.png" />
+    <None Remove="Res\mc\spruce_door_bottom.png" />
+    <None Remove="Res\mc\spruce_door_top.png" />
+    <None Remove="Res\mc\spruce_leaves.png" />
+    <None Remove="Res\mc\spruce_log.png" />
+    <None Remove="Res\mc\spruce_log_top.png" />
+    <None Remove="Res\mc\spruce_planks.png" />
+    <None Remove="Res\mc\spruce_trapdoor.png" />
+    <None Remove="Res\mc\stone.png" />
+    <None Remove="Res\mc\stonecutter_bottom.png" />
+    <None Remove="Res\mc\stonecutter_side.png" />
+    <None Remove="Res\mc\stonecutter_top.png" />
+    <None Remove="Res\mc\stone_bricks.png" />
+    <None Remove="Res\mc\stripped_acacia_log.png" />
+    <None Remove="Res\mc\stripped_acacia_log_top.png" />
+    <None Remove="Res\mc\stripped_bamboo_block.png" />
+    <None Remove="Res\mc\stripped_bamboo_block_top.png" />
+    <None Remove="Res\mc\stripped_birch_log.png" />
+    <None Remove="Res\mc\stripped_birch_log_top.png" />
+    <None Remove="Res\mc\stripped_cherry_log.png" />
+    <None Remove="Res\mc\stripped_cherry_log_top.png" />
+    <None Remove="Res\mc\stripped_crimson_stem.png" />
+    <None Remove="Res\mc\stripped_crimson_stem_top.png" />
+    <None Remove="Res\mc\stripped_dark_oak_log.png" />
+    <None Remove="Res\mc\stripped_dark_oak_log_top.png" />
+    <None Remove="Res\mc\stripped_jungle_log.png" />
+    <None Remove="Res\mc\stripped_jungle_log_top.png" />
+    <None Remove="Res\mc\stripped_mangrove_log.png" />
+    <None Remove="Res\mc\stripped_mangrove_log_top.png" />
+    <None Remove="Res\mc\stripped_oak_log.png" />
+    <None Remove="Res\mc\stripped_oak_log_top.png" />
+    <None Remove="Res\mc\stripped_spruce_log.png" />
+    <None Remove="Res\mc\stripped_spruce_log_top.png" />
+    <None Remove="Res\mc\stripped_warped_stem.png" />
+    <None Remove="Res\mc\stripped_warped_stem_top.png" />
+    <None Remove="Res\mc\structure_block.png" />
+    <None Remove="Res\mc\structure_block_corner.png" />
+    <None Remove="Res\mc\structure_block_data.png" />
+    <None Remove="Res\mc\structure_block_load.png" />
+    <None Remove="Res\mc\structure_block_save.png" />
+    <None Remove="Res\mc\sugar_cane.png" />
+    <None Remove="Res\mc\suspicious_sand_0.png" />
+    <None Remove="Res\mc\suspicious_sand_1.png" />
+    <None Remove="Res\mc\suspicious_sand_2.png" />
+    <None Remove="Res\mc\suspicious_sand_3.png" />
+    <None Remove="Res\mc\sweet_berry_bush_stage3.png" />
+    <None Remove="Res\mc\target_side.png" />
+    <None Remove="Res\mc\target_top.png" />
+    <None Remove="Res\mc\terracotta.png" />
+    <None Remove="Res\mc\tinted_glass.png" />
+    <None Remove="Res\mc\tnt_bottom.png" />
+    <None Remove="Res\mc\tnt_side.png" />
+    <None Remove="Res\mc\tnt_top.png" />
+    <None Remove="Res\mc\torch.png" />
+    <None Remove="Res\mc\tube_coral.png" />
+    <None Remove="Res\mc\tube_coral_block.png" />
+    <None Remove="Res\mc\tube_coral_fan.png" />
+    <None Remove="Res\mc\tuff.png" />
+    <None Remove="Res\mc\turtle_egg.png" />
+    <None Remove="Res\mc\turtle_egg_slightly_cracked.png" />
+    <None Remove="Res\mc\turtle_egg_very_cracked.png" />
+    <None Remove="Res\mc\verdant_froglight_side.png" />
+    <None Remove="Res\mc\verdant_froglight_top.png" />
+    <None Remove="Res\mc\vine.png" />
+    <None Remove="Res\mc\warped_door_bottom.png" />
+    <None Remove="Res\mc\warped_door_top.png" />
+    <None Remove="Res\mc\warped_nylium.png" />
+    <None Remove="Res\mc\warped_nylium_side.png" />
+    <None Remove="Res\mc\warped_planks.png" />
+    <None Remove="Res\mc\warped_roots.png" />
+    <None Remove="Res\mc\warped_roots_pot.png" />
+    <None Remove="Res\mc\warped_stem.png" />
+    <None Remove="Res\mc\warped_stem_top.png" />
+    <None Remove="Res\mc\warped_trapdoor.png" />
+    <None Remove="Res\mc\warped_wart_block.png" />
+    <None Remove="Res\mc\water_overlay.png" />
+    <None Remove="Res\mc\weathered_copper.png" />
+    <None Remove="Res\mc\weathered_cut_copper.png" />
+    <None Remove="Res\mc\weeping_vines.png" />
+    <None Remove="Res\mc\weeping_vines_plant.png" />
+    <None Remove="Res\mc\wet_sponge.png" />
+    <None Remove="Res\mc\wheat_stage5.png" />
+    <None Remove="Res\mc\wheat_stage6.png" />
+    <None Remove="Res\mc\wheat_stage7.png" />
+    <None Remove="Res\mc\white_concrete.png" />
+    <None Remove="Res\mc\white_concrete_powder.png" />
+    <None Remove="Res\mc\white_glazed_terracotta.png" />
+    <None Remove="Res\mc\white_shulker_box.png" />
+    <None Remove="Res\mc\white_stained_glass.png" />
+    <None Remove="Res\mc\white_terracotta.png" />
+    <None Remove="Res\mc\white_wool.png" />
+    <None Remove="Res\mc\yellow_concrete.png" />
+    <None Remove="Res\mc\yellow_concrete_powder.png" />
+    <None Remove="Res\mc\yellow_glazed_terracotta.png" />
+    <None Remove="Res\mc\yellow_shulker_box.png" />
+    <None Remove="Res\mc\yellow_stained_glass.png" />
+    <None Remove="Res\mc\yellow_terracotta.png" />
+    <None Remove="Res\mc\yellow_wool.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AverageColorsImages.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\drop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\acacia_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\acacia_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\acacia_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\amethyst_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\ancient_debris_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\ancient_debris_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\andesite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\anvil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\azalea_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_fence_gate_particle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_fence_particle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_mosaic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bamboo_stalk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\barrel_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\barrel_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\barrel_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\barrel_top_open.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\basalt_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\basalt_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\beacon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bedrock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\beehive_end.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\beehive_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\beehive_front_honey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\beehive_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bee_nest_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bee_nest_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bee_nest_front_honey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bee_nest_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bee_nest_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\birch_trapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blackstone_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\black_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blast_furnace_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blast_furnace_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blast_furnace_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_ice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\blue_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bone_block_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bone_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bookshelf.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brain_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brewing_stand_base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_mushroom_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\brown_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\bubble_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\budding_amethyst.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cake_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cake_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\calcite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cartography_table_side1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cartography_table_side2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cartography_table_side3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cartography_table_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\carved_pumpkin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cauldron_inner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cauldron_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cherry_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cherry_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cherry_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cherry_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cherry_trapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_bookshelf_empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_bookshelf_occupied.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_bookshelf_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_bookshelf_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_deepslate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_nether_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_polished_blackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_quartz_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_quartz_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_red_sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chiseled_stone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chorus_flower.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chorus_flower_dead.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\chorus_plant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\clay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\coal_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\coal_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\coarse_dirt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cobbled_deepslate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cobblestone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\comparator.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\comparator_on.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\composter_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\composter_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\conduit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\copper_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\copper_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cracked_deepslate_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cracked_deepslate_tiles.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cracked_nether_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cracked_polished_blackstone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cracked_stone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crafting_table_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crafting_table_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crafting_table_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_nylium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_nylium_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crimson_stem_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\crying_obsidian.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cut_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cut_red_sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cut_sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\cyan_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_oak_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_oak_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_oak_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_oak_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_oak_trapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dark_prismarine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\daylight_detector_inverted_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\daylight_detector_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\daylight_detector_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dead_brain_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dead_bubble_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dead_fire_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dead_horn_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dead_tube_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_coal_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_copper_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_diamond_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_emerald_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_gold_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_iron_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_lapis_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_redstone_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_tiles.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\deepslate_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\destroy_stage_9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\diamond_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\diamond_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\diorite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dirt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dirt_path_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dirt_path_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dispenser_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dispenser_front_vertical.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dragon_egg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dried_kelp_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dried_kelp_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dried_kelp_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dripstone_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dropper_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\dropper_front_vertical.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\emerald_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\emerald_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\enchanting_table_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\enchanting_table_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\end_portal_frame_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\end_portal_frame_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\end_stone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\end_stone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\exposed_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\exposed_cut_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\farmland.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\farmland_moist.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\fire_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\fletching_table_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\fletching_table_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\fletching_table_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\flowering_azalea_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\furnace_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\furnace_front_on.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\furnace_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\furnace_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gilded_blackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\glowstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\glow_item_frame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gold_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gold_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\granite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\grass_block_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\grass_block_snow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\grass_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gravel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\gray_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\green_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\hay_block_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\hay_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\honeycomb_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\honey_block_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\honey_block_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\honey_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\hopper_inside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\hopper_outside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\horn_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\ice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\iron_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\iron_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\iron_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\item_frame.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jack_o_lantern.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jigsaw_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jigsaw_lock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jigsaw_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jigsaw_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jukebox_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jukebox_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_leaves.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\jungle_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lapis_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lapis_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lectern_base.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lectern_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lectern_sides.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lectern_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_blue_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\light_gray_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lime_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lodestone_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\lodestone_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\loom_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\loom_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\loom_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\loom_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\magenta_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_leaves.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mangrove_roots_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\melon_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\melon_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mossy_cobblestone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mossy_stone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\moss_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\muddy_mangrove_roots_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\muddy_mangrove_roots_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mud_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mushroom_block_inside.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mushroom_stem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mycelium_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\mycelium_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\netherite_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\netherrack.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\nether_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\nether_gold_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\nether_quartz_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\nether_wart_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\note_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oak_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oak_leaves.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oak_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oak_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oak_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\observer_back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\observer_back_on.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\observer_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\observer_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\observer_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\obsidian.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\ochre_froglight_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\ochre_froglight_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\orange_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oxidized_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\oxidized_cut_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\packed_ice.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\packed_mud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pearlescent_froglight_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pearlescent_froglight_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pink_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\piston_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\piston_inner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\piston_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\piston_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\piston_top_sticky.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\podzol_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\podzol_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_andesite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_basalt_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_basalt_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_blackstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_blackstone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_deepslate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_diorite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\polished_granite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\powder_snow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\prismarine_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pumpkin_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\pumpkin_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purple_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purpur_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purpur_pillar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\purpur_pillar_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_block_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_block_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_pillar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\quartz_pillar_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\raw_copper_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\raw_gold_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\raw_iron_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\redstone_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\redstone_dust_overlay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\redstone_lamp.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\redstone_lamp_on.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\redstone_ore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_mushroom_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_nether_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_sand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_sandstone_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_sandstone_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\red_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\reinforced_deepslate_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\reinforced_deepslate_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\reinforced_deepslate_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\repeater.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\repeater_on.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_side0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_side1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_side2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_side3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_side4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\respawn_anchor_top_off.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\rooted_dirt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sandstone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sandstone_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sandstone_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\scaffolding_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_catalyst_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_catalyst_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_catalyst_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_sensor_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_sensor_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sculk_shrieker_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\shroomlight.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\slime_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smithing_table_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smithing_table_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smithing_table_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smithing_table_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smoker_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smoker_front.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smoker_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smoker_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smooth_basalt.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smooth_stone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\smooth_stone_slab_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\snow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\soul_sand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\soul_soil.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\sponge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\spruce_trapdoor.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stone.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stonecutter_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stonecutter_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stone_bricks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_acacia_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_acacia_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_bamboo_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_bamboo_block_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_birch_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_birch_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_cherry_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_cherry_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_crimson_stem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_crimson_stem_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_dark_oak_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_dark_oak_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_jungle_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_jungle_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_mangrove_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_mangrove_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_oak_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_oak_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_spruce_log.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_spruce_log_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_warped_stem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\stripped_warped_stem_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\suspicious_sand_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\suspicious_sand_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\suspicious_sand_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\suspicious_sand_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\target_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\target_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\tnt_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\tnt_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\tnt_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\tube_coral_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\tuff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\verdant_froglight_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\verdant_froglight_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_door_bottom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_door_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_nylium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_nylium_side.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_planks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_stem_top.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\warped_wart_block.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\water_overlay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\weathered_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\weathered_cut_copper.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\wet_sponge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\white_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_concrete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_concrete_powder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_glazed_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_shulker_box.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_terracotta.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\mc\yellow_wool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="drop.png" />
+  </ItemGroup>
+
+</Project>

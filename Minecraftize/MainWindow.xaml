@@ -1,0 +1,42 @@
+﻿<Window x:Class="Minecraftize.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Minecraftize"
+        mc:Ignorable="d"
+        Title="Minecraftize" Height="450" Width="800"
+        >
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
+    <Grid AllowDrop="True" Drop="Image_FileDrop">
+
+        <Image Name="ImagePanel"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top" 
+               Width="1920"
+               Height="1280" 
+               Source="{Binding ImagePanel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+               Margin="-13,2,0,0"/>
+        <Button IsEnabled="{Binding ButtonEnabled, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                Content="Minecraftize" 
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="10,10"
+                RenderTransformOrigin="0.534,0.576"
+                Command="{Binding MinecraftizeClickCommand}"/>
+        <Slider Width="120"
+                Minimum="4"
+                Maximum="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="97,11,0,0"
+                Value="8"
+                IsSnapToTickEnabled="True"
+                TickFrequency="4"
+                ValueChanged="SliderValueChanged" />
+        <TextBlock HorizontalAlignment="Left" Margin="217,11,0,0" TextWrapping="Wrap" Text="{Binding Value}" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
