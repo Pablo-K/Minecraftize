@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -126,7 +127,48 @@ namespace Minecraftize
             double prevWindowHeight = e.PreviousSize.Height;
             double prevWindowWidth = e.PreviousSize.Width;
             ImageWidth = (int)(newWindowWidth * 0.8);
-            ImageHeight = (int)(newWindowHeight * 1); 
+            ImageHeight = (int)(newWindowHeight * 1);
+        }
+
+        internal void ChooseImageButton(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.Filter = "";
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
+            string sep = string.Empty;
+            foreach (var c in codecs)
+            {
+                string codecName = c.CodecName.Substring(8).Replace("Codec", "Files").Trim();
+                dlg.Filter = String.Format("{0}{1}{2} ({3})|{3}", dlg.Filter, sep, codecName, c.FilenameExtension);
+                sep = "|";
+            }
+
+            dlg.Filter = String.Format("{0}{1}{2} ({3})|{3}", dlg.Filter, sep, "All Files", "*.*");
+            dlg.InitialDirectory = _dir;
+            dlg.DefaultExt = "*.*";
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = dlg.FileName;
+                FileInfo file = new FileInfo(filename);
+                FileStream f1 = new FileStream(filename, FileMode.Open,
+                FileAccess.Read, FileShare.Read);;
+                byte[] BytesOfPic = new byte[Convert.ToInt32(file.Length)];
+                f1.Read(BytesOfPic, 0, Convert.ToInt32(file.Length));
+
+                if (file.Extension != ".png" && file.Extension != ".jpg" && file.Extension != ".jpeg") return;
+                using (MemoryStream mStream = new MemoryStream())
+                {
+                    _dir = file.Directory.ToString();
+                    mStream.Write(BytesOfPic, 0, BytesOfPic.Length);
+                    mStream.Seek(0, SeekOrigin.Begin);
+                    _image = new Bitmap(mStream);
+                    ButtonEnabled = true;
+                    UpdateImage(_image);
+                }
+            }
+
         }
     }
 }

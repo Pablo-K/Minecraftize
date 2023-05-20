@@ -5,12 +5,14 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="AverageColorsImages.json" />
     <None Remove="drop.png" />
     <None Remove="Res\drop.png" />
+    <None Remove="Res\favicon.ico" />
     <None Remove="Res\mc\acacia_door_bottom.png" />
     <None Remove="Res\mc\acacia_door_top.png" />
     <None Remove="Res\mc\acacia_leaves.png" />
@@ -727,6 +729,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Res\drop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Res\favicon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Res\mc\acacia_log.png">

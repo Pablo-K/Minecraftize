@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraftize"
         mc:Ignorable="d"
-        Title="Minecraftize" Height="450" Width="800"
+        Title="Minecraftize" Height="450" Width="800" Icon="/Res/favicon.ico"
         >
     <Window.DataContext>
         <local:MainWindowVM/>
@@ -65,6 +65,7 @@
                Grid.Row="1"
                 Margin="28,86,0,0"
                 VerticalAlignment="Top" Click="SaveImageButton"/>
+        <Button Grid.Column="1" Content="Choose image" HorizontalAlignment="Left" Margin="20,121,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ChooseImageButton"/>
 
     </Grid>
 </Window>

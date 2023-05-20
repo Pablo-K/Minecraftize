@@ -35,5 +35,10 @@ namespace Minecraftize
         {
             _vm.SaveImageButton(sender, e);
         }
+
+        private void ChooseImageButton(object sender, RoutedEventArgs e)
+        {
+            _vm.ChooseImageButton(sender, e);
+        }
     }
 }
