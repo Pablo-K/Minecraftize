@@ -9,10 +9,7 @@ namespace Minecraftize
     class Minecraftizer
     {
         public int Square { get; set; }
-        public Minecraftizer()
-        {
-
-        }
+        public Minecraftizer() { }
 
         public async Task<Bitmap> Minecraftize(Bitmap bm, int size)
         {
@@ -22,50 +19,54 @@ namespace Minecraftize
             int fileCount = dir.Length;
 
             List<Color> averageColors = new List<Color>();
-            int squresWidth = bm.Width / size;
+            int squaresWidth = bm.Width / size;
             int squaresHeight = bm.Height / size;
 
-            List<Task> tasks = new List<Task>();
-
+            Task thread1 = Task.Run(() =>
+        {
             for (int x = 0; x < squaresHeight; x++)
             {
+                for (int i = 0; i < squaresWidth; i++)
                 {
-                    for (int i = 0; i < squresWidth; i++)
-                    {
-                        Bitmap b = new Bitmap(size, size);
-                        for (int j = 0; j < size; j++)
-                        {
-                            for (int k = 0; k < size; k++)
-                            {
-                                b.SetPixel(j, k, bm.GetPixel(i * size + j, x * size + k));
-                            }
-                        }
-                        averageColors.Add(ColorManager.GetAverageColor(b));
-                    }
-                };
-            }
-            Bitmap obraz = new Bitmap(squresWidth * size, squaresHeight * size);
-            int licznik = 0;
-            for (int x = 0; x < squaresHeight; x++)
-            {
-                for (int i = 0; i < squresWidth; i++)
-                {
-                    Bitmap ico = new Bitmap(ColorManager.Icons[ColorManager.FindClosestColorIndex(averageColors[licznik])]);
-                    Bitmap icon = new Bitmap(ico, new Size(size,size)); 
+                    Bitmap b = new Bitmap(size, size);
                     for (int j = 0; j < size; j++)
                     {
                         for (int k = 0; k < size; k++)
                         {
-                            obraz.SetPixel(i * size + j, x * size + k, icon.GetPixel(j,k));
+                            b.SetPixel(j, k, bm.GetPixel(i * size + j, x * size + k));
                         }
                     }
-                    licznik++;
+                    lock (averageColors)
+                    {
+                        averageColors.Add(ColorManager.GetAverageColor(b));
+                    }
                 }
             }
-
-
-
-            return obraz;
+        });
+            Bitmap finalImage = new Bitmap(squaresWidth * size, squaresHeight * size);
+            Task thread2 = Task.Run(() =>
+            {
+                int counter = 0;
+                for (int x = 0; x < squaresHeight; x++)
+                {
+                    for (int i = 0; i < squaresWidth; i++)
+                    {
+                        while (averageColors.Count <= counter) { }
+                        Bitmap ico = new Bitmap(ColorManager.Icons[ColorManager.FindClosestColorIndex(averageColors[counter])]);
+                        Bitmap icon = new Bitmap(ico, new Size(size, size));
+                        for (int j = 0; j < size; j++)
+                        {
+                            for (int k = 0; k < size; k++)
+                            {
+                                finalImage.SetPixel(i * size + j, x * size + k, icon.GetPixel(j, k));
+                            }
+                        }
+                        counter++;
+                    }
+                }
+            });
+            Task.WaitAll(thread1, thread2);
+            return finalImage;
         }
     }
 }

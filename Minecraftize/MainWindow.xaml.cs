@@ -14,6 +14,11 @@ namespace Minecraftize
             _vm = new MainWindowVM();
             InitializeComponent();
             this.DataContext = _vm;
+            this.SizeChanged += OnWindowSizeChanged;
+        }
+        protected void OnWindowSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            _vm.OnWindowSizeChanged(sender, e);
         }
 
         private void Image_FileDrop(object sender, DragEventArgs e)
@@ -24,6 +29,11 @@ namespace Minecraftize
         private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _vm.SliderValueChanged(sender, e);
+        }
+
+        private void SaveImageButton(object sender, RoutedEventArgs e)
+        {
+            _vm.SaveImageButton(sender, e);
         }
     }
 }
