@@ -1,49 +1,24 @@
 ﻿using Hazdryx.Drawing;
-using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
+using System.Drawing.Drawing2D;
 
 namespace Minecraftize {
   public class ColorManager {
 
-    private readonly Color[] _colors;
-    private readonly Image[] _icons;
-    private readonly Dictionary<Color, int> _closestColorsCache;
+    private readonly IconsCacheManager _iconsCacheManager;
+    private readonly ConcurrentDictionary<Color, int> _closestColorsCache;
 
-    private ColorManager(IEnumerable<Color> colors, IEnumerable<Image> icons) {
-      _colors = colors.ToArray();
-      _icons = icons.ToArray();
+    public ColorManager() {
       _closestColorsCache = new();
+      _iconsCacheManager = new IconsCacheManager();
+      _iconsCacheManager.Initialize();
     }
 
-    public static ColorManager Initialize() {
-
-      var colors = new List<Color>();
-      var icons = new List<Image>();
-
-      string[][] str = JsonSerializer.Deserialize<string[][]>(File.ReadAllText("AverageColorsImages.json"))!;
-
-      for (int i = 0; i < str.Length; i++) {
-        int r = Convert.ToInt32(str[i][1]);
-        int g = Convert.ToInt32(str[i][2]);
-        int b = Convert.ToInt32(str[i][3]);
-        colors.Add(Color.FromArgb(r, g, b));
-        var path = str[i][0];
-        icons.Add(Image.FromFile(path));
-      }
-
-      return new ColorManager(colors, icons);
-
-    }
-
-    public Bitmap MinecraftizeBitmap(FastBitmap source) {
+    public void DrawIconOnBitmap(FastBitmap source) {
       var color = GetAverageColor(source);
       var iconIndex = FindClosestColorIndex(color);
-      var bitmap = GetBitmapByIndex(iconIndex, source.Width, source.Height);
-      return bitmap;
+      _iconsCacheManager.DrawIconOnBitmap(source, iconIndex);
     }
 
     public static Color GetAverageColor(FastBitmap bm) {
@@ -71,15 +46,10 @@ namespace Minecraftize {
       byte greenAverage = (byte)(greenSum / totalPixels);
       byte blueAverage = (byte)(blueSum / totalPixels);
 
-      Color c = Color.FromArgb(redAverage, greenAverage, blueAverage);
-      return c;
+      Color color = Color.FromArgb(redAverage, greenAverage, blueAverage);
 
-    }
+      return color;
 
-    private Bitmap GetBitmapByIndex(int index, int width, int height) {
-      var img = _icons[index];
-      var bitmap = new Bitmap(img, new Size(width, height));
-      return bitmap;
     }
 
     private int FindClosestColorIndex(Color targetColor) {
@@ -87,17 +57,17 @@ namespace Minecraftize {
       if (_closestColorsCache.ContainsKey(targetColor)) return _closestColorsCache[targetColor];
 
       int closestColorIndex = 0;
-      int closestDistance = CalculateColorDistance(targetColor, _colors[0]);
+      int closestDistance = CalculateColorDistance(targetColor, _iconsCacheManager.Colors[0]);
 
-      for (int i = 0; i < _colors.Length; i++) {
-        int distance = CalculateColorDistance(targetColor, _colors[i]);
+      for (int i = 0; i < _iconsCacheManager.Colors.Length; i++) {
+        int distance = CalculateColorDistance(targetColor, _iconsCacheManager.Colors[i]);
         if (distance < closestDistance) {
           closestColorIndex = i;
           closestDistance = distance;
         }
       }
 
-      _closestColorsCache.Add(targetColor, closestColorIndex);
+      _closestColorsCache.TryAdd(targetColor, closestColorIndex);
 
       return closestColorIndex;
 
