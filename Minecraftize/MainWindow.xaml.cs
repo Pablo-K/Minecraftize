@@ -1,44 +1,32 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Windows;
 
-namespace Minecraftize
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        MainWindowVM _vm;
-        public MainWindow()
-        {
-            _vm = new MainWindowVM();
-            InitializeComponent();
-            this.DataContext = _vm;
-            this.SizeChanged += OnWindowSizeChanged;
-        }
-        protected void OnWindowSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            _vm.OnWindowSizeChanged(sender, e);
-        }
+namespace Minecraftize {
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow : Window {
 
-        private void Image_FileDrop(object sender, DragEventArgs e)
-        {
-            _vm.Image_FileDrop(sender, e);
-        }
+    public MainWindow() {
 
-        private void SliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            _vm.SliderValueChanged(sender, e);
-        }
+      InitializeComponent();
 
-        private void SaveImageButton(object sender, RoutedEventArgs e)
-        {
-            _vm.SaveImageButton(sender, e);
-        }
-
-        private void ChooseImageButton(object sender, RoutedEventArgs e)
-        {
-            _vm.ChooseImageButton(sender, e);
-        }
     }
+
+    private void Image_FileDrop(object sender, DragEventArgs e) {
+
+      string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+      if (files.Length != 0) return;
+
+      var file = new FileInfo(files[0]);
+
+      if (file.Extension != ".png" && file.Extension != ".jpg" && file.Extension != ".jpeg") return;
+
+      ((MainWindowVM)this.DataContext).Image_FileDrop(file);
+
+    }
+
+  }
 }

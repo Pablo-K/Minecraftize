@@ -5,67 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Minecraftize"
         mc:Ignorable="d"
-        Title="Minecraftize" Height="450" Width="800" Icon="/Res/favicon.ico"
+        Title="Minecraftize"
+        Height="450"
+        Width="800"
+        Icon="/Res/favicon.ico"
         >
-    <Window.DataContext>
-        <local:MainWindowVM/>
-    </Window.DataContext>
-    <Grid AllowDrop="True" Drop="Image_FileDrop">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition MinWidth="120" Width="5*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+  <Window.DataContext>
+    <local:MainWindowVM/>
+  </Window.DataContext>
 
-        <Image Name="ImagePanel"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Top" 
-               Width="{Binding ImageWidth}"
-               Height="{Binding ImageHeight}" 
-               Grid.Column="2"
-               Grid.Row="2"
-               Source="{Binding ImagePanel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-               />
-        <Button IsEnabled="{Binding ButtonEnabled, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                Content="Minecraftize" 
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-               Grid.Column="1"
-               Grid.Row="1"
-                Margin="25,53,0,0"
-                RenderTransformOrigin="0.534,0.576"
-                Command="{Binding MinecraftizeClickCommand}"/>
-        <Slider Width="120"
+  <Grid AllowDrop="True" Drop="Image_FileDrop">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="120"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Border Background="#FAFAFA" Grid.Column="1">
+      <Image Stretch="Uniform"
+             Source="{Binding ImageSource, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+             Margin="5"
+             />
+    </Border>
+    <Border BorderThickness="0, 1, 1, 0" BorderBrush="#CCCCCC">
+      <StackPanel Background="#EEEEEE">
+        <StackPanel.Resources>
+          <Style TargetType="Button">
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Margin" Value="0, 5"/>
+          </Style>
+        </StackPanel.Resources>
+        <Slider Margin="0, 10, 0, 0" 
+                Width="110"
                 Minimum="4"
                 Maximum="32"
-                HorizontalAlignment="Left"
-               Grid.Column="1"
-               Grid.Row="1"
-                VerticalAlignment="Top"
-                Margin="0,26,0,0"
-                Value="8"
-                IsSnapToTickEnabled="True"
                 TickFrequency="4"
-                ValueChanged="SliderValueChanged" />
-        <TextBlock HorizontalAlignment="Left" 
-                   Margin="60,5,0,0"
-                   TextWrapping="Wrap"
-               Grid.Column="1"
-                   Text="{Binding Value}"
-               Grid.Row="1"
-                   VerticalAlignment="Top"/>
-        <Button IsEnabled="{Binding SaveButtonEnabled, UpdateSourceTrigger=PropertyChanged}" 
-                Content="Save image"
-                HorizontalAlignment="Left"
-               Grid.Column="1"
-               Grid.Row="1"
-                Margin="28,86,0,0"
-                VerticalAlignment="Top" Click="SaveImageButton"/>
-        <Button Grid.Column="1" Content="Choose image" HorizontalAlignment="Left" Margin="20,121,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ChooseImageButton"/>
+                IsSnapToTickEnabled="True"
+                Value="{Binding SliderValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                />
+        <TextBlock HorizontalAlignment="Center" 
+                   Text="{Binding SliderValue}"
+                   Margin="0, 0, 0, 5"
+                   />
+        <Button Content="Minecraftize" Command="{Binding MinecraftizeClickCommand}" />
+        <Button Content="Save image" Command="{Binding SaveImageCommand}" />
+        <Button Content="Choose image" Command="{Binding ChooseImageCommand}" />
+      </StackPanel>
+    </Border>
 
-    </Grid>
+  </Grid>
 </Window>
