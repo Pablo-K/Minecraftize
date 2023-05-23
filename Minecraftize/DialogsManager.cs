@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Minecraftize {
-  public static class DialogsManager {
+namespace Minecraftize
+{
+    public static class DialogsManager {
 
 
     public static string? ShowSaveImageDialog() {
@@ -40,6 +37,22 @@ namespace Minecraftize {
       return filename;
 
     }
+    public static string? ShowChooseVideoDialog() {
+
+      var dlg = new Microsoft.Win32.OpenFileDialog {
+        Filter = GetFileDialogVideoFilter(),
+        FilterIndex = 5
+      };
+
+      if (dlg.ShowDialog() != true) return null;
+
+      string filename = dlg.FileName;
+      FileInfo file = new FileInfo(filename);
+      if (file.Extension != ".mp4") return null;
+
+      return filename;
+
+    }
 
     private static string GetFileDialogImageFilter() {
 
@@ -52,6 +65,14 @@ namespace Minecraftize {
         sep = "|";
       }
       filter = String.Format("{0}{1}{2} ({3})|{3}", filter, sep, "All Files", "*.*");
+      return filter;
+
+    }
+    private static string GetFileDialogVideoFilter() {
+
+      string sep = string.Empty;
+      string filter = string.Empty;
+            filter = "MP4 files (*.mp4)|*.mp4|All files (*.*)|*.*";
       return filter;
 
     }

@@ -54,6 +54,7 @@
         <Button Content="Minecraftize" Command="{Binding MinecraftizeClickCommand}" />
         <Button Content="Save image" Command="{Binding SaveImageCommand}" />
         <Button Content="Choose image" Command="{Binding ChooseImageCommand}" />
+        <Button Content="Choose video" Command="{Binding ChooseVideoCommand}" />
 
         <Ellipse Width="36"
                  Height="36"
