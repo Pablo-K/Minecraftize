@@ -1,14 +1,11 @@
 ﻿using FFMediaToolkit;
 using FFMediaToolkit.Decoding;
 using FFMediaToolkit.Encoding;
-using FFMediaToolkit.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -28,11 +25,21 @@ namespace Minecraftize
         private ImageSource? _imageSource;
         private Bitmap? _minecraftizedImage = null;
         private int _sliderValue = 8;
+        private int _fpsSliderValue = 30;
+        private int _extractedFrames = 0;
+        private int _allFrames = 0;
+        private int _addedFrames = 0;
+        private int _minecraftizedFrames = 0;
         private bool _isMinecraftizingInProgress;
         private string _filePath;
 
         public int SliderValue { get { return _sliderValue; } set { _sliderValue = value; OnPropertyChanged(); } }
+        public int FpsSliderValue { get { return _fpsSliderValue; } set { _fpsSliderValue = value; OnPropertyChanged(); } }
         public ImageSource ImageSource { get { return _imageSource!; } set { _imageSource = value; OnPropertyChanged(); } }
+        public int AllFrames { get { return _allFrames; } set { _allFrames = value; OnPropertyChanged(); } }
+        public int MinecraftizedFrames { get { return _minecraftizedFrames; } set { _minecraftizedFrames = value; OnPropertyChanged(); } }
+        public int AddedFrames { get { return _addedFrames; } set { _addedFrames = value; OnPropertyChanged(); } }
+        public int ExtractedFrames { get { return _extractedFrames; } set { _extractedFrames = value; OnPropertyChanged(); } }
         public bool IsMinecraftizingInProgress { get => _isMinecraftizingInProgress; set { _isMinecraftizingInProgress = value; OnPropertyChanged(); } }
 
         public ICommand MinecraftizeClickCommand { get; }
@@ -113,8 +120,9 @@ namespace Minecraftize
                 {
                     Bitmap bm = new Bitmap(dir[j]);
                     minecraftizedBitmaps.Add(await _minecraftizer.Minecraftize(bm, _sliderValue));
+                    this.MinecraftizedFrames += 1;
                 }
-                var settings = new VideoEncoderSettings(width: minecraftizedBitmaps.FirstOrDefault().Width, height: minecraftizedBitmaps.FirstOrDefault().Height, framerate: 30, codec: VideoCodec.H264);
+                var settings = new VideoEncoderSettings(width: minecraftizedBitmaps.FirstOrDefault().Width, height: minecraftizedBitmaps.FirstOrDefault().Height, framerate: this.FpsSliderValue, codec: VideoCodec.H264);
                 settings.EncoderPreset = EncoderPreset.Fast;
                 settings.CRF = 17;
                 using (var file = MediaBuilder.CreateContainer(_filePath.Remove(_filePath.Length - 4) + "i.mp4").WithVideo(settings).Create())
@@ -122,6 +130,7 @@ namespace Minecraftize
                     for (int j = 0; j < minecraftizedBitmaps.Count; j++)
                     {
                         ImgTools.AddFrame(file.Video, minecraftizedBitmaps[j]);
+                        this.AddedFrames += 1;
                     }
                 }
                 Task.Run(async () =>
@@ -154,6 +163,7 @@ namespace Minecraftize
             _loadedVideo = MediaFile.Open(@filename);
             _loadedVideo.Video.TryGetNextFrame(out var imageData);
             var image = imageData.ToBitmap();
+            this.AllFrames = (int)_loadedVideo.Video.Info.NumberOfFrames; 
             UpdateImage(image);
             RaiseCanExecuteChanged();
         }

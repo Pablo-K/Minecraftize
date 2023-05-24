@@ -43,7 +43,7 @@ namespace Minecraftize
             while (file.Video.TryGetNextFrame(out var imageData))
             {
                 Bitmap bm = imageData.ToBitmap();
-                Directory.CreateDirectory(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo")).Delete();
+                Directory.CreateDirectory(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"));
 
                 bm.Save(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo/" + i + ".png"));
                 bm.Dispose();

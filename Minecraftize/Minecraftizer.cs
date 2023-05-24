@@ -62,25 +62,22 @@ namespace Minecraftize
             return _finalImage.BaseBitmap;
 
         }
-
         private ValueTask MinecraftizeAsync(Tuple<int, int> range, CancellationToken ct)
         {
 
-            FastBitmap bms = new FastBitmap(_squareSize, _squareSize);
             for (int i = range.Item1; i < range.Item2; i++)
             {
 
                 int x = (i % _horizontalSquaresCount) * _squareSize;
                 int y = (i / _horizontalSquaresCount) * _squareSize;
 
-                _fastSourceBitmap.CopyTo(bms, x, y, _squareSize, _squareSize);
+                _fastSourceBitmap.CopyTo(_squareBitmap, x, y, _squareSize, _squareSize);
 
-                _colorManager.DrawIconOnBitmap(bms);
+                _colorManager.DrawIconOnBitmap(_squareBitmap);
 
-                WriteIconOnFinalImage(bms.BaseBitmap, x, y);
+                WriteIconOnFinalImage(_squareBitmap.BaseBitmap, x, y);
 
             }
-            bms.Dispose();
             return ValueTask.CompletedTask;
 
         }
