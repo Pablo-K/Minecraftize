@@ -26,7 +26,6 @@ namespace Minecraftize
         private Bitmap? _minecraftizedImage = null;
         private int _sliderValue = 8;
         private int _fpsSliderValue = 30;
-        private int _extractedFrames = 0;
         private int _allFrames = 0;
         private int _addedFrames = 0;
         private int _minecraftizedFrames = 0;
@@ -39,7 +38,6 @@ namespace Minecraftize
         public int AllFrames { get { return _allFrames; } set { _allFrames = value; OnPropertyChanged(); } }
         public int MinecraftizedFrames { get { return _minecraftizedFrames; } set { _minecraftizedFrames = value; OnPropertyChanged(); } }
         public int AddedFrames { get { return _addedFrames; } set { _addedFrames = value; OnPropertyChanged(); } }
-        public int ExtractedFrames { get { return _extractedFrames; } set { _extractedFrames = value; OnPropertyChanged(); } }
         public bool IsMinecraftizingInProgress { get => _isMinecraftizingInProgress; set { _isMinecraftizingInProgress = value; OnPropertyChanged(); } }
 
         public ICommand MinecraftizeClickCommand { get; }
@@ -155,7 +153,10 @@ namespace Minecraftize
         }
         private void ChooseVideo(object? _)
         {
-            FFmpegLoader.FFmpegPath = FFmpegLoader.FFmpegPath + "ffmpeg/x86_64";
+            if (FFmpegLoader.FFmpegPath.Split("/").Last() != "x86_64")
+            {
+                FFmpegLoader.FFmpegPath = FFmpegLoader.FFmpegPath + "ffmpeg/x86_64";
+            }
             string? filename = DialogsManager.ShowChooseVideoDialog();
             if (filename is null) return;
             _filePath = filename;
@@ -163,7 +164,7 @@ namespace Minecraftize
             _loadedVideo = MediaFile.Open(@filename);
             _loadedVideo.Video.TryGetNextFrame(out var imageData);
             var image = imageData.ToBitmap();
-            this.AllFrames = (int)_loadedVideo.Video.Info.NumberOfFrames; 
+            this.AllFrames = (int)_loadedVideo.Video.Info.NumberOfFrames;
             UpdateImage(image);
             RaiseCanExecuteChanged();
         }
