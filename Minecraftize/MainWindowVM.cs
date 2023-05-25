@@ -184,6 +184,7 @@ namespace Minecraftize
             var image = imageData.ToBitmap();
             this.AllFrames = (int)_loadedVideo.Video.Info.NumberOfFrames;
             UpdateImage(image);
+            FpsSliderValue = (int)(_loadedVideo.Video.Info.NumberOfFrames / _loadedVideo.Video.Info.Duration.TotalMilliseconds * 1000);
             this.ShowVideoConvertStats = true;
             RaiseCanExecuteChanged();
         }
