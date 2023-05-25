@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Minecraftize"
         mc:Ignorable="d"
         Title="Minecraftize"
-        Height="500"
+        Height="550"
         Width="800"
         Icon="/Res/favicon.ico"
         >

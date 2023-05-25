@@ -134,6 +134,7 @@ namespace Minecraftize
                     Bitmap bm = new Bitmap(dir[j]);
                     minecraftizedBitmaps.Add(await _minecraftizer.Minecraftize(bm, _sliderValue));
                     this.MinecraftizedFrames += 1;
+                    bm.Dispose();
                 }
                 var settings = new VideoEncoderSettings(width: minecraftizedBitmaps.FirstOrDefault().Width, height: minecraftizedBitmaps.FirstOrDefault().Height, framerate: this.FpsSliderValue, codec: VideoCodec.H264);
                 settings.EncoderPreset = EncoderPreset.Fast;
@@ -153,6 +154,8 @@ namespace Minecraftize
                 });
                 IsMinecraftizingInProgress = false;
                 ShowVideoConvertStats = false;
+                this.AddedFrames = 0;
+                this.MinecraftizedFrames = 0;
                 RaiseCanExecuteChanged();
             }
         }

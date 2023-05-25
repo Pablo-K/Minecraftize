@@ -3,6 +3,7 @@ using FFMediaToolkit.Encoding;
 using FFMediaToolkit.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -40,14 +41,24 @@ namespace Minecraftize
         {
             var file = loadedVideo;
             var i = 0;
-            while (file.Video.TryGetNextFrame(out var imageData))
+            var dur = new TimeSpan((long)(file.Video.Info.Duration.TotalMilliseconds * 10000));
+            long durInLong = (long)(file.Video.Info.Duration.TotalMilliseconds * 10000);
+            var act = new TimeSpan(0);
+            var diff = new TimeSpan((long)(durInLong / file.Video.Info.NumberOfFrames));
+            while (act < dur)
             {
-                Bitmap bm = imageData.ToBitmap();
-                Directory.CreateDirectory(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"));
+                try
+                {
+                    var imageData = file.Video.GetFrame(act);
+                    Bitmap bm = imageData.ToBitmap();
+                    Directory.CreateDirectory(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"));
+                    bm.Save(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo/" + i + ".png"));
+                    bm.Dispose();
+                    act += diff;
+                    i++;
+                }
+                catch (Exception ex) { Debug.WriteLine("End of file"); break; }
 
-                bm.Save(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo/" + i + ".png"));
-                bm.Dispose();
-                i++;
             }
         }
         private static void GetImageData()
