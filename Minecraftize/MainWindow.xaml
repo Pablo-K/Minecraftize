@@ -39,6 +39,7 @@
                         <Setter Property="Margin" Value="0, 5"/>
                     </Style>
                 </StackPanel.Resources>
+                <Button Width="160" Content="Choose save video location" Command="{Binding ChooseFilePathCommand}" />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="Minecraftize pixels"
                    Margin="0, 0, 0, 5"
@@ -108,26 +109,44 @@
                 <TextBlock HorizontalAlignment="Center" 
                    Text="All Frames (approximately)"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="{Binding AllFrames}"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="Minecraftized Frames"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="{Binding MinecraftizedFrames}"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="Added Frames"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
                 <TextBlock HorizontalAlignment="Center" 
                    Text="{Binding AddedFrames}"
                    Margin="0, 0, 0, 5"
+                 Visibility="{Binding ShowVideoConvertStats,
+                              Converter={StaticResource BoolToVisibilityConverter},
+                              UpdateSourceTrigger=PropertyChanged}"
                    />
 
             </StackPanel>

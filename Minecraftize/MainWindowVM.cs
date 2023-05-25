@@ -1,6 +1,8 @@
 ﻿using FFMediaToolkit;
 using FFMediaToolkit.Decoding;
 using FFMediaToolkit.Encoding;
+using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -30,7 +32,8 @@ namespace Minecraftize
         private int _addedFrames = 0;
         private int _minecraftizedFrames = 0;
         private bool _isMinecraftizingInProgress;
-        private string _filePath;
+        private bool _showVideoConvertStats;
+        private string? _filePath = null;
 
         public int SliderValue { get { return _sliderValue; } set { _sliderValue = value; OnPropertyChanged(); } }
         public int FpsSliderValue { get { return _fpsSliderValue; } set { _fpsSliderValue = value; OnPropertyChanged(); } }
@@ -39,11 +42,13 @@ namespace Minecraftize
         public int MinecraftizedFrames { get { return _minecraftizedFrames; } set { _minecraftizedFrames = value; OnPropertyChanged(); } }
         public int AddedFrames { get { return _addedFrames; } set { _addedFrames = value; OnPropertyChanged(); } }
         public bool IsMinecraftizingInProgress { get => _isMinecraftizingInProgress; set { _isMinecraftizingInProgress = value; OnPropertyChanged(); } }
+        public bool ShowVideoConvertStats { get => _showVideoConvertStats; set { _showVideoConvertStats = value; OnPropertyChanged(); } }
 
         public ICommand MinecraftizeClickCommand { get; }
         public ICommand SaveImageCommand { get; }
         public ICommand ChooseImageCommand { get; }
         public ICommand ChooseVideoCommand { get; }
+        public ICommand ChooseFilePathCommand { get; }
 
         public MainWindowVM()
         {
@@ -70,6 +75,10 @@ namespace Minecraftize
 
             this.ChooseVideoCommand = new Command(
               execute: ChooseVideo,
+              canExecute: (_) => !this.IsMinecraftizingInProgress);
+
+            this.ChooseFilePathCommand = new Command(
+              execute: ChooseFilePath,
               canExecute: (_) => !this.IsMinecraftizingInProgress);
 
         }
@@ -99,16 +108,22 @@ namespace Minecraftize
 
         private async void MinecraftizeClick(object? _)
         {
-            this.IsMinecraftizingInProgress = true;
             if (_loadedImage != null)
             {
+                this.IsMinecraftizingInProgress = true;
                 var minecraftizedImage = await _minecraftizer.Minecraftize(_loadedImage!, _sliderValue);
                 this.IsMinecraftizingInProgress = false;
                 _minecraftizedImage?.Dispose();
                 _minecraftizedImage = minecraftizedImage;
+                IsMinecraftizingInProgress = false;
+                ShowVideoConvertStats = false;
+                UpdateImage(minecraftizedImage);
+                RaiseCanExecuteChanged();
             }
             if (_loadedVideo != null)
             {
+                if (_filePath == null) return;
+                this.IsMinecraftizingInProgress = true;
                 List<Bitmap> minecraftizedBitmaps = new List<Bitmap>();
                 ImgTools.GetBitmapsFromFile(_loadedVideo);
                 var dir = Directory.GetFiles(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"));
@@ -123,7 +138,7 @@ namespace Minecraftize
                 var settings = new VideoEncoderSettings(width: minecraftizedBitmaps.FirstOrDefault().Width, height: minecraftizedBitmaps.FirstOrDefault().Height, framerate: this.FpsSliderValue, codec: VideoCodec.H264);
                 settings.EncoderPreset = EncoderPreset.Fast;
                 settings.CRF = 17;
-                using (var file = MediaBuilder.CreateContainer(_filePath.Remove(_filePath.Length - 4) + "i.mp4").WithVideo(settings).Create())
+                using (var file = MediaBuilder.CreateContainer(Path.Join(_filePath, "MinecraftizedVideo.mp4")).WithVideo(settings).Create())
                 {
                     for (int j = 0; j < minecraftizedBitmaps.Count; j++)
                     {
@@ -136,9 +151,10 @@ namespace Minecraftize
                     await Task.Delay(1000);
                     Directory.Delete(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"), true);
                 });
+                IsMinecraftizingInProgress = false;
+                ShowVideoConvertStats = false;
+                RaiseCanExecuteChanged();
             }
-            IsMinecraftizingInProgress = false;
-            RaiseCanExecuteChanged();
         }
 
         private void ChooseImage(object? _)
@@ -159,14 +175,24 @@ namespace Minecraftize
             }
             string? filename = DialogsManager.ShowChooseVideoDialog();
             if (filename is null) return;
-            _filePath = filename;
             _loadedVideo?.Dispose();
             _loadedVideo = MediaFile.Open(@filename);
             _loadedVideo.Video.TryGetNextFrame(out var imageData);
             var image = imageData.ToBitmap();
             this.AllFrames = (int)_loadedVideo.Video.Info.NumberOfFrames;
             UpdateImage(image);
+            this.ShowVideoConvertStats = true;
             RaiseCanExecuteChanged();
+        }
+        private void ChooseFilePath(object? _)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = "C:\\Users";
+            dialog.IsFolderPicker = true;
+            dialog.ShowDialog();
+            string filename = dialog.FileName;
+            if (filename is null) return;
+            _filePath = filename;
         }
 
         private void RaiseCanExecuteChanged()
