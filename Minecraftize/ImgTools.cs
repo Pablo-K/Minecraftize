@@ -61,9 +61,5 @@ namespace Minecraftize
 
             }
         }
-        private static void GetImageData()
-        {
-
-        }
     }
 }

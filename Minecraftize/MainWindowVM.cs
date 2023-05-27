@@ -153,7 +153,6 @@ namespace Minecraftize
                     Directory.Delete(Path.Join(Directory.GetCurrentDirectory(), "minecraftizedVideo"), true);
                 });
                 IsMinecraftizingInProgress = false;
-                ShowVideoConvertStats = false;
                 this.AddedFrames = 0;
                 this.MinecraftizedFrames = 0;
                 RaiseCanExecuteChanged();
